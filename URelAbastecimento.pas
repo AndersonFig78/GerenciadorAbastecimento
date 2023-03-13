@@ -52,6 +52,8 @@ type
     RLBand1: TRLBand;
     RLLabel2: TRLLabel;
     rsltValor1: TRLDBResult;
+    RLLabel3: TRLLabel;
+    RLDBResult1: TRLDBResult;
   private
     { Private declarations }
   public

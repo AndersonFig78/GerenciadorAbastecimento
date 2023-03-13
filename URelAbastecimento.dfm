@@ -488,6 +488,32 @@ object RelAbastecimento: TRelAbastecimento
         Info = riSum
         Text = ''
       end
+      object RLLabel3: TRLLabel
+        Left = 255
+        Top = 6
+        Width = 87
+        Height = 16
+        Alignment = taRightJustify
+        Caption = 'Total Litros : '
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -13
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object RLDBResult1: TRLDBResult
+        Left = 348
+        Top = 6
+        Width = 73
+        Height = 16
+        Alignment = taRightJustify
+        DataField = 'Litros'
+        DataSource = dtmAcoesBanco.dsRelAbastecimento
+        Info = riSum
+        ResetAfterPrint = True
+        Text = ''
+      end
     end
   end
 end
