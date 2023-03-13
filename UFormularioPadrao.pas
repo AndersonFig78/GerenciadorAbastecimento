@@ -16,6 +16,7 @@ type
     btnSair: TButton;
     btnEditar: TBitBtn;
     procedure btnSairClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -31,6 +32,13 @@ implementation
 
 procedure TFrmFormularioPadrao.btnSairClick(Sender: TObject);
 begin
+  Close;
+end;
+
+procedure TFrmFormularioPadrao.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+  btnCancelar.Click;
   Close;
 end;
 

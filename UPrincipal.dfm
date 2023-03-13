@@ -22,8 +22,13 @@ object frmPrincipal: TfrmPrincipal
     Top = 292
     object mniArquivo: TMenuItem
       Caption = 'Arquivo'
-      object mnTiipos: TMenuItem
-        Caption = '&Tipos'
+      object mniAbastecimento: TMenuItem
+        Caption = '&Abastecimento'#13#10
+        OnClick = mniAbastecimentoClick
+      end
+      object mniRelaAbastecimentos: TMenuItem
+        Caption = '&Relat'#243'rio de Abastecimentos'
+        OnClick = mniRelaAbastecimentosClick
       end
       object mniSeparador1: TMenuItem
         Caption = '-'

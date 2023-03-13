@@ -10,7 +10,7 @@ type
   TfrmPrincipal = class(TForm)
     mmPrincipal: TMainMenu;
     mniArquivo: TMenuItem;
-    mnTiipos: TMenuItem;
+    mniAbastecimento: TMenuItem;
     mniParametros: TMenuItem;
     mniTipos: TMenuItem;
     mniSeparador1: TMenuItem;
@@ -20,6 +20,7 @@ type
     mniImposto: TMenuItem;
     mniBombas: TMenuItem;
     mniFuncionario: TMenuItem;
+    mniRelaAbastecimentos: TMenuItem;
     procedure mniSairClick(Sender: TObject);
     procedure mniTiposClick(Sender: TObject);
     procedure mniTiposMestreClick(Sender: TObject);
@@ -28,6 +29,8 @@ type
     procedure mniImpostoClick(Sender: TObject);
     procedure mniBombasClick(Sender: TObject);
     procedure mniFuncionarioClick(Sender: TObject);
+    procedure mniAbastecimentoClick(Sender: TObject);
+    procedure mniRelaAbastecimentosClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -40,9 +43,14 @@ var
 implementation
 
 uses
-  UAcoesBanco, UTipos, UTiposMestre, UGlobalSistema, UValorCombustivel, UTanque, UImposto, UBombas, UFuncionarios;
+  UAcoesBanco, UTipos, UTiposMestre, UGlobalSistema, UValorCombustivel, UTanque, UImposto, UBombas, UFuncionarios, UAbastecimento, URelAbastecimento;
 
 {$R *.dfm}
+
+procedure TfrmPrincipal.mniAbastecimentoClick(Sender: TObject);
+begin
+  ChamarFormulario(TFrmAbastecimento, FrmAbastecimento);
+end;
 
 procedure TfrmPrincipal.mniBombasClick(Sender: TObject);
 begin
@@ -57,6 +65,21 @@ end;
 procedure TfrmPrincipal.mniImpostoClick(Sender: TObject);
 begin
   ChamarFormulario(TFrmImposto, FrmImposto);
+end;
+
+procedure TfrmPrincipal.mniRelaAbastecimentosClick(Sender: TObject);
+begin
+  try
+    dtmAcoesBanco.ConectarBanco;
+    dtmAcoesBanco.qryRelAbastecimento.Open;
+    RelAbastecimento := TRelAbastecimento.Create(Self);
+    RelAbastecimento.prtAbastecimento.Preview;
+  finally
+    RelAbastecimento.Free;
+    dtmAcoesBanco.qryRelAbastecimento.Close;
+    dtmAcoesBanco.DesconectarBanco;
+  end;
+
 end;
 
 procedure TfrmPrincipal.mniSairClick(Sender: TObject);

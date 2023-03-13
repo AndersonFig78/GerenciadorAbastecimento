@@ -13,7 +13,8 @@ uses
   UImposto in 'UImposto.pas' {FrmImposto},
   UBombas in 'UBombas.pas' {FrmBombas},
   UFuncionarios in 'UFuncionarios.pas' {FrmFuncionarios},
-  UAbastecimento in 'UAbastecimento.pas' {FrmAbastecimento};
+  UAbastecimento in 'UAbastecimento.pas' {FrmAbastecimento},
+  URelAbastecimento in 'URelAbastecimento.pas' {RelAbastecimento};
 
 {$R *.res}
 
@@ -22,6 +23,5 @@ begin
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TfrmPrincipal, frmPrincipal);
   Application.CreateForm(TdtmAcoesBanco, dtmAcoesBanco);
-  Application.CreateForm(TFrmAbastecimento, FrmAbastecimento);
   Application.Run;
 end.

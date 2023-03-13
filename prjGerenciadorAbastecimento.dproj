@@ -149,6 +149,10 @@
             <Form>FrmAbastecimento</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="URelAbastecimento.pas">
+            <Form>RelAbastecimento</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
