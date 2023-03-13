@@ -54,6 +54,8 @@ type
     rsltValor1: TRLDBResult;
     RLLabel3: TRLLabel;
     RLDBResult1: TRLDBResult;
+    RLDBResult2: TRLDBResult;
+    RLLabel4: TRLLabel;
   private
     { Private declarations }
   public

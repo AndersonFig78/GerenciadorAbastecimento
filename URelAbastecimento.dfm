@@ -28,7 +28,7 @@ object RelAbastecimento: TRelAbastecimento
       Left = 38
       Top = 77
       Width = 718
-      Height = 292
+      Height = 272
       DataFields = 'Data'
       object bndData: TRLBand
         Left = 0
@@ -63,7 +63,7 @@ object RelAbastecimento: TRelAbastecimento
         Left = 0
         Top = 35
         Width = 718
-        Height = 210
+        Height = 198
         DataFields = 'Tanque'
         object bndTanque: TRLBand
           Left = 0
@@ -104,7 +104,7 @@ object RelAbastecimento: TRelAbastecimento
           Left = 0
           Top = 37
           Width = 718
-          Height = 132
+          Height = 120
           Borders.Sides = sdCustom
           Borders.DrawLeft = False
           Borders.DrawTop = False
@@ -368,7 +368,7 @@ object RelAbastecimento: TRelAbastecimento
         end
         object bndTotalBomba1: TRLBand
           Left = 0
-          Top = 169
+          Top = 157
           Width = 718
           Height = 33
           BandType = btFooter
@@ -380,6 +380,7 @@ object RelAbastecimento: TRelAbastecimento
             Alignment = taRightJustify
             DataField = 'Litros'
             DataSource = dtmAcoesBanco.dsRelAbastecimento
+            DisplayMask = '###,###,##0.00'
             Info = riSum
             ResetAfterPrint = True
             Text = ''
@@ -402,7 +403,7 @@ object RelAbastecimento: TRelAbastecimento
       end
       object RLBand1: TRLBand
         Left = 0
-        Top = 245
+        Top = 233
         Width = 718
         Height = 29
         BandType = btFooter
@@ -432,6 +433,33 @@ object RelAbastecimento: TRelAbastecimento
           Info = riSum
           Text = ''
         end
+        object RLDBResult2: TRLDBResult
+          Left = 348
+          Top = 6
+          Width = 73
+          Height = 16
+          Alignment = taRightJustify
+          DataField = 'Litros'
+          DataSource = dtmAcoesBanco.dsRelAbastecimento
+          DisplayMask = '###,###,##0.00'
+          Info = riSum
+          ResetAfterPrint = True
+          Text = ''
+        end
+        object RLLabel4: TRLLabel
+          Left = 226
+          Top = 6
+          Width = 116
+          Height = 16
+          Alignment = taRightJustify
+          Caption = 'Total Litros Data: '
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          ParentFont = False
+        end
       end
     end
     object bndTitulo: TRLBand
@@ -458,7 +486,7 @@ object RelAbastecimento: TRelAbastecimento
     end
     object bndSumario: TRLBand
       Left = 38
-      Top = 369
+      Top = 349
       Width = 718
       Height = 29
       BandType = btSummary
@@ -489,12 +517,12 @@ object RelAbastecimento: TRelAbastecimento
         Text = ''
       end
       object RLLabel3: TRLLabel
-        Left = 255
+        Left = 216
         Top = 6
-        Width = 87
+        Width = 126
         Height = 16
         Alignment = taRightJustify
-        Caption = 'Total Litros : '
+        Caption = 'Total Litros Geral : '
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clBlack
         Font.Height = -13
@@ -510,6 +538,7 @@ object RelAbastecimento: TRelAbastecimento
         Alignment = taRightJustify
         DataField = 'Litros'
         DataSource = dtmAcoesBanco.dsRelAbastecimento
+        DisplayMask = '###,###,##0.00'
         Info = riSum
         ResetAfterPrint = True
         Text = ''
